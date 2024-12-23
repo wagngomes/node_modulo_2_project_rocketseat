@@ -10,7 +10,7 @@ const envSchema = z.object({
 export const _env = envSchema.safeParse(process.env)
 
 if(_env.success === false){
-    console.error('Variaveel de ambiente não encontrada');
+    console.error('Variavel de ambiente não encontrada');
     throw new Error('invalid environment var')
 }
 

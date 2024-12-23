@@ -1,8 +1,12 @@
 import fastify from "fastify";
+import { transactionRoute } from "./routes/transactions";
+
 const app = fastify();
-app.get("/", () => {
-  return "teste rodando";
-});
+
+app.register(transactionRoute)
+
+
+
 app
   .listen({
     port: 3333,
