@@ -1,14 +1,4 @@
-import fastify from "fastify";
-import { transactionRoute } from "./routes/transactions";
-import cookie from "@fastify/cookie";
-
-const app = fastify();
-
-
-app.register(cookie)
-app.register(transactionRoute)
-
-
+import { app } from "./app";
 
 app
   .listen({
