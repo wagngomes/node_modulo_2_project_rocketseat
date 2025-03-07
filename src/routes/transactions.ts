@@ -3,7 +3,6 @@ import { knex } from "../database";
 import { z } from "zod";
 import { randomUUID } from "crypto";
 import { checkSessionsIdExists } from "../middlewares/check-session-Id-exists";
-import { request } from "http";
 
 export function transactionRoute(app: FastifyInstance) {
   app.get(
@@ -48,7 +47,7 @@ export function transactionRoute(app: FastifyInstance) {
       session_id: sessionId,
     });
 
-    return reply.status(201).send();
+    return reply.status(201).send(sessionId);
   });
 
   app.get(
