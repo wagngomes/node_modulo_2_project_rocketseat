@@ -14,9 +14,6 @@ describe("transactionRoutes", () => {
   });
 
 
-  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-  console.log(process.env.DATABASE_URL)
-
   beforeEach(() => {
     console.log('Diretório atual:', process.cwd())
     execSync('npm run knex migrate:rollback --all')
