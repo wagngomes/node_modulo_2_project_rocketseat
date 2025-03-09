@@ -1,5 +1,4 @@
 import { expect, vitest, beforeAll, test, describe, afterAll, beforeEach} from "vitest";
-import supertest from "supertest";
 import { app } from "../src/app";
 import request from "supertest";
 import { execSync } from "node:child_process";
@@ -14,7 +13,12 @@ describe("transactionRoutes", () => {
     await app.close();
   });
 
+
+  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  console.log(process.env.DATABASE_URL)
+
   beforeEach(() => {
+    console.log('Diretório atual:', process.cwd())
     execSync('npm run knex migrate:rollback --all')
     execSync('npm run knex migrate:latest')
   })
